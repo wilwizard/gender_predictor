@@ -1,12 +1,14 @@
 class Person < ActiveRecord::Base
   attr_accessible :height, :weight, :gender
-
-  after_create :populate_gender
+  validates :height, :presence => true
+  validates :weight, :presence => true
+  before_save :populate_gender
 
   private
 
   def populate_gender
-  	gender = height > 67 ? "M" : "F"
+  	p "populating"
+  	self.gender = height > 67 ? "M" : "F"
   end
 
 end

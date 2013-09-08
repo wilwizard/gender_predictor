@@ -1,10 +1,12 @@
 class PeopleController < ApplicationController
 
 	def new
+		@new_person = Person.new
 	end
 
 	def create
-		 Person.create(params)
+		 person = Person.create(params[:person])
+		 render :json => person
 	end
 
 
