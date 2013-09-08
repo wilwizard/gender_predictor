@@ -1,0 +1,7 @@
+<h1>Guess an age</h1>
+
+<% form_for @person do |f| :remote => :true %>
+	<%= f.height :height %>
+	<%= f.weight :weight %>
+	<%= f.submit %>
+<% end %>
