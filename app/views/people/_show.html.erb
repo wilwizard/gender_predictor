@@ -1,7 +1,9 @@
-<span>They are most likely 
+<span>The gender is most likely 
 	<% if person.gender == "M" %>
 	<%= "Male" %>
 	<% elsif person.gender == "F" %>
 	<%= "Female" %>
+	<% else %>
+	<%= "Unknown" %>
 	<% end %>
 </span>

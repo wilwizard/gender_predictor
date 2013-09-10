@@ -6,6 +6,7 @@ gem 'pg'
 group :development, :test do
 	gem 'rspec-rails'
 	gem 'shoulda'
+	gem 'awesome_print'
 end
 
 group :assets do

@@ -7,7 +7,16 @@ class Person < ActiveRecord::Base
   private
 
   def populate_gender
-  	self.gender = height > 67 ? "M" : "F"
+  	count = DataPoint.sample(height,weight).inject(0) do |count, point|
+  		count += point.gender == "M" ? 1 : -1
+  	end
+
+  	if count >= 0
+			self.gender = "M"
+		elsif count < 0
+			self.gender = "F"
+		end
+
   end
 
 end
