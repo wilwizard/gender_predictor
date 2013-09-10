@@ -5,9 +5,8 @@ class PeopleController < ApplicationController
 	end
 
 	def create
-		 person = Person.create(params[:person])
-		 render :json => person
+		 @person = Person.create(params[:person])
+		 render :json => { :body => render_to_string(:partial => 'show', :locals => {:person => @person}, :layout => false)}
 	end
-
 
 end

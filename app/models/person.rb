@@ -7,7 +7,6 @@ class Person < ActiveRecord::Base
   private
 
   def populate_gender
-  	p "populating"
   	self.gender = height > 67 ? "M" : "F"
   end
 
