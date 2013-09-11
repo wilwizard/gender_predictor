@@ -1,9 +1,11 @@
-<h1>Guess an age</h1>
+<div class="container">
+	<h1 class="title">Gender Predictr</h1>
 
-<%= form_for @new_person, :remote => true do |f|  %>
-	<%= f.text_field :height, :placeholder => 'Height in cm' %><br>
-	<%= f.text_field :weight,  :placeholder => 'Weight in kgs' %><br>
-	<%= f.submit %>
-<% end %>
+	<%= form_for @new_person, :remote => true do |f|  %>
+		<%= f.text_field :height, :placeholder => 'Height in cm', :class => 'height-field' %>
+		<%= f.text_field :weight,  :placeholder => 'Weight in kgs', :class => 'weight-feild' %>
+		<%= f.submit 'Guess'%>
+	<% end %>
 
-<div class="person"></div>
+	<div class="person"></div>
+</div>
